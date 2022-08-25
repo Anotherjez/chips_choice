@@ -150,11 +150,7 @@ class ChipsChoice<T> extends StatefulWidget {
     this.spinnerSize,
     this.spinnerColor,
     this.spinnerThickness,
-  })  : assert(
-          choiceLoader != null,
-          'One of the parameters must be provided',
-        ),
-        assert(wrapped != null),
+  })  : assert(wrapped != null),
         _isMultiChoice = false,
         _value = value,
         _values = null,
