@@ -1,3 +1,6 @@
+## [2.0.8] - 2022-08-25
+- Bug fixes
+
 ## [2.0.6] - 2022-03-14
 - Adjusted backgroud and borderRadius style.
 

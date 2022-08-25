@@ -1,9 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'choice_style.dart';
 
 /// Choice option
 class C2Choice<T> {
-
   /// Value to return
   final T value;
 
@@ -50,14 +48,13 @@ class C2Choice<T> {
     this.activeStyle,
     this.select,
     this.selected = false,
-  }) : assert(disabled != null),
-    assert(hidden != null);
+  });
 
   @override
   bool operator ==(Object other) =>
-    identical(this, other) ||
+      identical(this, other) ||
       other is C2Choice &&
-        runtimeType == other.runtimeType &&
+          runtimeType == other.runtimeType &&
           value == other.value;
 
   @override
@@ -74,21 +71,24 @@ class C2Choice<T> {
     _C2ChoiceProp<E, dynamic>? meta,
     _C2ChoiceProp<E, C2ChoiceStyle>? style,
     _C2ChoiceProp<E, C2ChoiceStyle>? activeStyle,
-  }) => source
-    .asMap()
-    .map((index, item) => MapEntry(index, C2Choice<R>(
-      value: value.call(index, item),
-      label: label.call(index, item),
-      tooltip: tooltip?.call(index, item),
-      disabled: disabled?.call(index, item) ?? false,
-      hidden: hidden?.call(index, item) ?? false,
-      meta: meta?.call(index, item),
-      style: style?.call(index, item),
-      activeStyle: activeStyle?.call(index, item),
-    )))
-    .values
-    .toList()
-    .cast<C2Choice<R>>();
+  }) =>
+      source
+          .asMap()
+          .map((index, item) => MapEntry(
+              index,
+              C2Choice<R>(
+                value: value.call(index, item),
+                label: label.call(index, item),
+                tooltip: tooltip?.call(index, item),
+                disabled: disabled?.call(index, item) ?? false,
+                hidden: hidden?.call(index, item) ?? false,
+                meta: meta?.call(index, item),
+                style: style?.call(index, item),
+                activeStyle: activeStyle?.call(index, item),
+              )))
+          .values
+          .toList()
+          .cast<C2Choice<R>>();
 
   /// Creates a copy of this [C2Choice] but with
   /// the given fields replaced with the new values.
@@ -121,9 +121,6 @@ class C2Choice<T> {
   /// Creates a copy of this [S2Choice] but with
   /// the given fields replaced with the new values.
   C2Choice<T> merge(C2Choice<T> other) {
-    // if null return current object
-    if (other == null) return this;
-
     return copyWith(
       value: other.value,
       label: other.label,

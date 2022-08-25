@@ -1,4 +1,4 @@
-library chips_choice_null_safety;
+library chips_choice;
 
 export 'src/widget.dart';
 export 'src/chip.dart';

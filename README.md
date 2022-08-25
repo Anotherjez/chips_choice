@@ -2,17 +2,8 @@
 
 An easy way to provide a single or multiple choice chips.
 
-## What's New in Version 2.0.5
-- Adjusted style, to change style: border and color.
-- bug fixes
-
-## What's New in Version 2.0.3
-- Adjusted style
-- bug fixes
-
-## What's New in Version 2.0.1
-- Added Null Safety
-- Original Project: https://github.com/davigmacode/flutter_chips_choice
+## What's New in Version 2.0.8
+- Bug fixes
 
 ### Preview
 

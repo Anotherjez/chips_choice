@@ -172,9 +172,6 @@ class C2ChoiceStyle {
   /// Creates a copy of this [C2ChoiceStyle] but with
   /// the given fields replaced with the new values.
   C2ChoiceStyle merge(C2ChoiceStyle other) {
-    // if null return current object
-    if (other == null) return this;
-
     return copyWith(
       color: other.color,
       backgroundColor: other.backgroundColor,

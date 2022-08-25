@@ -1,4 +1,4 @@
-import 'package:chips_choice_null_safety/src/model/choice_style.dart';
+import 'package:chips_choice/src/model/choice_style.dart';
 import 'package:flutter/material.dart';
 import 'model/choice_style.dart';
 import 'model/choice_item.dart';
@@ -151,10 +151,9 @@ class ChipsChoice<T> extends StatefulWidget {
     this.spinnerColor,
     this.spinnerThickness,
   })  : assert(
-          choiceItems != null || choiceLoader != null,
+          choiceLoader != null,
           'One of the parameters must be provided',
         ),
-        assert(onChanged != null),
         assert(wrapped != null),
         _isMultiChoice = false,
         _value = value,
@@ -202,7 +201,7 @@ class ChipsChoice<T> extends StatefulWidget {
     this.spinnerColor,
     this.spinnerThickness,
   })  : assert(
-          choiceItems != null || choiceLoader != null,
+          choiceLoader != null,
           'One of the parameters must be provided',
         ),
         _value = null,
@@ -412,7 +411,6 @@ class ChipsChoiceState<T> extends State<ChipsChoice<T>> {
   /// generate the choice chips
   List<Widget> get choiceChips {
     return List<Widget>.generate(choiceItems!.length, choiceChipsGenerator)
-        .where((e) => e != null)
         .toList();
   }
 
@@ -504,7 +502,7 @@ class C2Spinner extends StatelessWidget {
           child: CircularProgressIndicator(
             strokeWidth: thickness ?? C2Spinner.defaultThickness,
             valueColor: AlwaysStoppedAnimation<Color>(
-                color ?? Theme.of(context).accentColor),
+                color ?? Theme.of(context).colorScheme.secondary),
           ),
         ),
       ),
